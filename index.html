@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi StoryMap</title>
+    <link rel="stylesheet" href="lib/leaflet.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #map {
+            position: relative;
+        }
+        #backToIndexButton {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div id="slides">
+                <!-- Diapositiva del índice -->
+                <div class="slide" data-lat="4.740765" data-lng="-74.025681" data-zoom="13">
+                    <h2>Índice</h2>
+                    <!-- Aquí agregamos la imagen -->
+                    <img src="assets/images/scrd.jpg" alt="Imagen de Índice" style="width: 40%; height: auto; float: left; margin-right: 30px;">
+                    <div id="index">
+                        <!-- Botones del índice se generarán dinámicamente con JavaScript -->
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.7407658" data-lng="-74.025681" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Usaquén</h2>
+                
+                    <img src="assets/images/usaquen.jpg" alt="Imagen 1">
+                
+                    <p>Es una localidad vestida de parques y plazas, en donde ocurren un sin fin de <span style="color: #e60073;">actividades deportivas, lúdicas, artísticas, culturales y patrimoniales</span>. Usaquén cuenta con la 
+                    <span style="color: #e60073;">Plaza Fundacional de Usaquén</span>, lugar tradicional que guarda las memorias de <span style="color: #e60073;">la cambiante relación entre el artista y el espacio público</span>. La localidad tiene una alta concentración 
+                    y cantidad de bienes nacionales y locales de interés cultural.</p>
+                
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Usaquén</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/1_usaquen.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_usaquen.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.646776" data-lng="-74.035753" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Chapinero</h2>
+                
+                    <img src="assets/images/FOTO 7.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Distrito Creativo y Diverso La Playa</span>, lugar que reivindica la lucha LGBTIQ +. En Chapinero se lleva a cabo 
+                    periódicamente el <span style="color: #e60073;">Festival Makia</span>, evento artístico multidisciplinar que busca exaltar la expresión cultural y que une en un mismo espacio 
+                    a creadores y públicos de diferentes áreas artísticas.</p>
+                
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Chapinero</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/2_chapinero.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_chapinero.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.594534" data-lng="-74.030837" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Santa Fe</h2>
+                
+                    <img src="assets/images/FOTO 8.jpg" alt="Imagen 1">
+                
+                    <p>En la localidad se puede hacer el tour del grafiti y hacer parte de la historia visual de Bogotá. En Santa Fe es posible encontrarse frente a frente con los rostros del arte 
+                    urbano de la ciudad, de los artistas del grafiti que retratan microhistorias, memorias, personajes y colores de la localidad y la ciudad. En esta localidad de realiza periódicamente el 
+                    <span style="color: #e60073;">Festival Macarenazo</span>, un espacio de convivencia que busca generar tejido social.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Santa Fe</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/3_santa_fe.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_santafe.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.547748" data-lng="-74.054758" data-zoom="13">
+                    <h2 style="color: #a52a2a;">San Cristóbal</h2>
+                
+                    <img src="assets/images/FOTO 9.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Teatro La Victoria</span>, lugar dedicado a la realización de eventos y fortalecimiento de proceso artísticos y culturales. 
+                    En San Cristóbal se lleva a cabo periódicamente la <span style="color: #e60073;">Conmemoración de la Virgen de la Roca</span>, de gran reconocimiento en la localidad. Uno de los 
+                    proyectos locales, destinado a redescubrir los lugares patrimoniales de la ciudad, es <span style="color: #e60073;">San Cristóbal tiene memoria</span>.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de San Cristóbal</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/4_san_cristobal.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_sancristobal.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.458790" data-lng="-74.103734" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Usme</h2>
+                
+                    <img src="assets/images/FOTO 10.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Parque Arqueológico y del Patrimonio Cultural de Usme</span>, que se encuentra la Hacienda El Carmen, lugar que 
+                    reflexiona sobre el pasado y las memorias y producto de la iniciativa de las comunidades rurales y urbanas del borde sur de Bogotá. En Usme se lleva a cabo el festival
+                    <span style="color: #e60073;">Usmetal</span>, que es uno de los 20 festivales de la localidad y con mejor proyección a nivel distrital.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Usme</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/5_usme.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_usme.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.569515" data-lng="-74.132147" data-zoom="14">
+                    <h2 style="color: #a52a2a;">Tunjuelito</h2>
+                
+                    <img src="assets/images/FOTO 11.jpg" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con la <span style="color: #e60073;">Casa de la Cultura de Tunjuelito</span>, como espacio de encuentro de articulación de procesos sociales y culturales. 
+                    Tunjuelito cuenta con la <span style="color: #e60073;">Cinemateca de Bogotá El Tunal</span>, ubicada dentro del Parque Metropolitano El Tunal.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Tunjuelito</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/6_tunjuelito.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_tunjuelito.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.620638" data-lng="-74.193391" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Bosa</h2>
+                
+                    <img src="assets/images/FOTO 12.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con siete maravillas patrimoniales, elegidas como las más representativas por la comunidad bosuna: <span style="color: #e60073;">Plaza Fundacional, Iglesia 
+                    San Bernardino, Cabildo Muisca, Humedal Tibanica, Humedal La Isla, Casa del Tren y Ruta Grafiti</span>. En Bosa se lleva a cabo periódicamente el
+                    <span style="color: #e60073;">Festival Bosa la Escena del Rock</span>.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Bosa</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/7_bosa.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_bosa.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.633146" data-lng="-74.147453" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Kennedy</h2>
+                
+                    <img src="assets/images/FOTO 13.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Monumento a las Banderas</span>, ícono a la memoria local que se compone de 120 esculturas de mujeres. En Kennedy 
+                    se lleva a cabo el <span style="color: #e60073;">Festival Chucua La Vaca</span>, apuesta cultural y comunitaria por los derechos de este ecosistema. Kennedy es un territorio 
+                    de agua, por la presencia de cuatro humedales: <span style="color: #e60073;">La Vaca, El Burro ,Techo y Tingua Azul</span>.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Kennedy</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/8_kennedy.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_kennedy.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.678991" data-lng="-74.125297" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Fontibón</h2>
+                
+                    <img src="assets/images/FOTO 14.jpg" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Parque Fundacional de Fontibón</span> y con la <span style="color: #e60073;">Casa de la Cultura de Fontibón Cacique Hyntiba</span>. 
+                    En esta localidad se lleva a cabo periódicamente el <span style="color: #e60073;">Carnaval de Fontibón</span>, en el que convergen todas las áreas artistas y el grueso de la base 
+                    cultural local. Fontibón es una localidad considerada como la puerta de entrada y salida de la ciudad, tanto por vía terrestre, como aérea.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Fontibón</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/9_fontibon.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_fontibon.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.695821" data-lng="-74.113550" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Engativá</h2>
+                
+                    <img src="assets/images/FOTO 15.jpg" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con la <span style="color: #e60073;">Plaza Fundacional de Engativá, las Plazas de Mercado las Ferias y Quirigua, la Casa de la Cultura de Engativá, el Salón de Artes Plásticas y Visuales</span>.
+                    En Engativá se llevan a cabo periódicamente los <span style="color: #e60073;">Festivales de Hip Hop, Rock, Danza, Multicultura</span>.. En esta localidad se encuentra el movimiento organizacional a cargo de mujeres 
+                    <span style="color: #e60073;">Engativá resiste con ellas</span>, que de manera autónoma ha liderado la realización de su festival anual durante 5 años consecutivos.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Engativá</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/10_engativa.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_engativa.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.775379" data-lng="-74.083409" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Suba</h2>
+                
+                    <img src="assets/images/FOTO 16.JPG" alt="Imagen 1">
+                
+                    <p>En la localidad se encuentra la <span style="color: #e60073;">Casa de la Cultura Ciudad Hunza</span>, muestra del legado como territorio habitado tradicionalmente por la 
+                    comunidad indígena Muisca. En Suba se lleva a cabo periódicamente el Festival de <span style="color: #e60073;">Hip Hop Suba al Ruedo</span>, que reúne a nuevas agrupaciones 
+                    y talentos jóvenes de la localidad y que en el 2023 llegó a su versión 16.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Suba</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/11_suba.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_suba.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.669586" data-lng="-74.072899" data-zoom="14">
+                    <h2 style="color: #a52a2a;">Barrios Unidos</h2>
+                
+                    <img src="assets/images/FOTO 17.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con las <span style="color: #e60073;">Plazas de Mercado Siete de Agosto y Doce de Octubre</span>, la industria del cuero, sitios históricos de interés 
+                    patrimonial, como la <span style="color: #e60073;">Alcaldía Local, el Barrio Modelo Norte, el Humedal el Salitre, la Casa de la Cultura de Barrios Unidos, la Biblioteca Pública 
+                    de la Participación Ciudadana</span> y procesos artísticos, culturales y patrimoniales emergentes y de larga trayectoria. En Barrios Unidos se llevan a cabo el 
+                    <span style="color: #e60073;">Festival de Rock, Open San Felipe, FestiUnidos, Festival de la Magia y la Alegría, Festival de las Comunidades NARP e Indígena</span> y la 
+                    programación permanente de las artes escénicas y circenses.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Barrios Unidos</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/12_barrios_unidos.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_barriosunidos.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.645463" data-lng="-74.090239" data-zoom="14">
+                    <h2 style="color: #a52a2a;">Teusaquillo</h2>
+                
+                    <img src="assets/images/FOTO 18.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Park Way</span>, eje cultural y ambiental que conecta la cultura de la ciudad. En Teusaquillo se lleva a cabo periódicamente el 
+                    <span style="color: #e60073;">Festival de Culturas Alternativas de Teusaquillo</span>, evento anual que reúne una variedad de expresiones artísticas y culturales alternativas. 
+                    Esta localidad se sigue consolidando como un Distrito Creativo de Bogotá.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Teusaquillo</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/13_teusaquillo.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_Teusaquillo.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.609089" data-lng="-74.086564" data-zoom="14">
+                    <h2 style="color: #a52a2a;">Los Mártires</h2>
+                
+                    <img src="assets/images/FOTO 19.JPG" alt="Imagen 1">
+                
+                    <p>Los Mártires es un vecindario céntrico concurrido, conocido por ser el epicentro de hierbas aromáticas, medicinales y esotéricas del país, que se encuentran todos los lunes y 
+                    jueves de 10:00 p.m. a 5:00 a.m. en la <span style="color: #e60073;">Plaza Samper Mendoza</span>. En la gran Estación de La Sabana, los turistas abordan un tren a vapor especial a 
+                    Zipaquirá. Héroes, poetas y presidentes colombianos están enterrados en el antiguo <span style="color: #e60073;">Cementerio Central de Bogotá</span>, y las pinturas y las esculturas 
+                    en el <span style="color: #e60073;">Centro de Memoria, Paz y Reconciliación</span> homenajean a las víctimas de la violencia y la guerra.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Los Mártires</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/14_los_martires.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_martires.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.590987" data-lng="-74.103394" data-zoom="14">
+                    <h2 style="color: #a52a2a;">Antonio Nariño</h2>
+                
+                    <img src="assets/images/FOTO 20.jpg" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con <span style="color: #e60073;">Museo de Artes Gráficas</span>, cuyo edificio fue construido en 1950 para las instalaciones de la Imprenta Nacional. 
+                    En Antonio Nariño circulan tres periódicos: <span style="color: #e60073;">El Peletero, la Nueva Bagatela e Info 15</span>, con temáticas variadas. Así mismo se tiene a las 
+                    emisoras comunitarias: <span style="color: #e60073;">Altoparlante</span> del barrio Policarpa y la <span style="color: #e60073;">Emisora Dinámica Estéreo</span>. En esta 
+                    localidad se encuentra la cooperativa de mujeres artesanas <span style="color: #e60073;">Red 15</span>.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Antonio Nariño</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/15_antonio_narino.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_antonioNarino.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.617247" data-lng="-74.109081" data-zoom="14">
+                    <h2 style="color: #a52a2a;">Puente Aranda</h2>
+                
+                    <img src="assets/images/FOTO 21.jpg" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con el <span style="color: #e60073;">Parque Zonal Ciudad Montes</span>, en el que se encuentra la <span style="color: #e60073;">Casa Museo Antonio Nariño</span>
+                    . En Puente Aranda se lleva a cabo periódicamente el <span style="color: #e60073;">Festival de Hip Hop - La 16 es Calle</span>, evento que fomenta la convivencia, el respeto y la paz, 
+                    y que que reúne a la comunidad en un ambiente de arte, música y cultura urbana. En esta localidad se encuentra el <span style="color: #e60073;">Distrito Grafiti</span>, corazón 
+                    de arte urbano de la ciudad, con intervenciones en mural de talla nacional e internacional.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Puente Aranda</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/16_puente_aranda.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_puente_aranda.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.596589" data-lng="-74.072059" data-zoom="15">
+                    <h2 style="color: #a52a2a;">La Candelaria</h2>
+                
+                    <img src="assets/images/FOTO 22.JPG" alt="Imagen 1">
+                
+                    <p>La localidad hace parte del centro histórico y fundacional de la ciudad. En La Candelaria se lleva a cabo periódicamente la <span style="color: #e60073;">Fiesta de Reyes Magos y Epifanía del barrio Egipto</span>
+                    , tradición que se ha mantenido viva en la llama cultural de la capital. En esta localidad se realizan recorridos históricos por los cafés y plazas más tradicionales.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de La Candelaria</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/17_la_candelaria.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_candelaria.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.567199" data-lng="-74.112757" data-zoom="15">
+                    <h2 style="color: #a52a2a;">Rafael Uribe Uribe</h2>
+                
+                    <img src="assets/images/FOTO 23.jpg" alt="Imagen 1">
+                
+                    <p>En la localidad se encuentra la <span style="color: #e60073;">Piedra del Amor, los Chorros de las lavanderas y el Mirador Parroquia la Resurrección</span>. En Rafael Uribe Uribe 
+                    se lleva a cabo periódicamente el<span style="color: #e60073;">Festival de la Lechona</span> en la denominada Zona L. Esta localidad cuenta con cuatro recorridos patrimoniales: 
+                    <span style="color: #e60073;">Ruta obrera, Ruta ambiental, Ruta Ancestral y Ruta Entrenubes</span>.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Rafael Uribe Uribe</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/18_rafael_uribe_uribe.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_rafaelUU.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.539737" data-lng="-74.149362" data-zoom="13">
+                    <h2 style="color: #a52a2a;">Ciudad Bolívar</h2>
+                
+                    <img src="assets/images/FOTO 24.JPG" alt="Imagen 1">
+                
+                    <p>La localidad cuenta con la <span style="color: #e60073;">Casa de la Cultura de Ciudad Bolívar</span>, espacio para el fortalecimiento de las diferentes expresiones artísticas y 
+                    culturales. En Ciudad Bolívar se realiza periódicamente el <span style="color: #e60073;">Festival internacional de cine y video alternativo y comunitario Ojo al Sancocho</span>. En 
+                    esta localidad se realizó la declaración de la <span style="color: #e60073;">Zona del Palo del Ahorcado </span>como bien de interés cultural de la ciudad.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Ciudad Bolívar</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/19_ciudad_bolivar.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_ciudadBoli.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <div class="slide" data-lat="4.098702" data-lng="-74.196848" data-zoom="10">
+                    <h2 style="color: #a52a2a;">Sumapaz</h2>
+                
+                    <img src="assets/images/FOTO 25.JPG" alt="Imagen 1">
+                
+                    <p>En la localidad se encuentra la <span style="color: #e60073;">Parcela cultural campesina</span>, ubicada en la vereda Betania de la Cuenca del Río Blanco. En Sumapaz se 
+                    realiza anualmente la <span style="color: #e60073;">Conmemoración del Dia del Campesino y la Campesina Sumapaceña</span>, que conmemora la identidad, las tradiciones y las 
+                    prácticas culturales de los campesinos y campesinas. Esta localidad es totalmente rural y representa el 70% del territorio de Bogotá y en ella se encuentra el páramo más 
+                    grande del mundo.</p>
+
+                    <p style="color: #e60073;">Para conocer más sobre la inversión y las realidades de este territorio consulta:</p>
+                                
+                    <!-- Insertamos la tarjeta debajo de la imagen en la diapositiva 1 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title">
+                                <p>Ficha local de Sumapaz</p> <!-- Título de la ficha -->
+                            </h2>
+                            <a href="https://culturarecreacionydeporte.gov.co/sites/default/files/2024-03/20_sumapaz.pdf" class="card-link" target="_blank" rel="noopener noreferrer">
+                                Ver en mayor detalle:
+                            </a>
+                        </div>
+                        <img src="assets/images/card_sumapaz.jpg" alt="Ilustración del estudio" class="card-image">
+                    </div>
+                </div>
+
+                <!-- Agrega más diapositivas según sea necesario -->
+            </div>
+        </div>
+        <div id="map">
+            <div id="backToIndexButton">Volver al Índice</div>
+        </div>
+    </div>
+    <script src="lib/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

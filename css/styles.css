@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    width: 70%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+#map {
+    width: 80%;
+    height: 100%;
+}
+
+.slide {
+    margin-bottom: 30px; /* Aumenta el margen inferior para más separación */
+    padding: 20px; /* Añade un relleno interno para espaciar el contenido */
+    border-radius: 10px; /* Bordes redondeados para las diapositivas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
+    background-color: #f8f5e9; /* Color de fondo blanco para las diapositivas */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.slide:hover {
+    background-color: #f0f0f0; /* Cambio de color de fondo al pasar el ratón */
+}
+
+.slide h2 {
+    margin-top: 0;
+}
+
+.slide img {
+    display: block;        /* Convierte la imagen en un bloque */
+    margin-left: auto;     /* Centra la imagen horizontalmente */
+    margin-right: auto;    /* Centra la imagen horizontalmente */
+    max-width: 50%;       /* Ajusta el ancho máximo al 100% del contenedor */
+    height: auto;          /* Mantiene la proporción de la imagen */
+    border-radius: 5px;    /* Mantiene el borde redondeado */
+    margin-top: 10px;      /* Añade margen superior */
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    max-width: 250px; /* Reducir el ancho a la mitad */
+    height: 75px; /* Reducir la altura */
+    overflow: hidden;
+    margin: 10px auto; /* Ajustar el margen */
+}
+
+.card-content {
+    padding: 8px; /* Reducir el padding interno */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-image {
+    width: 50px; /* Reducir el tamaño de la imagen */
+    height: 100%; 
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 10px; /* Reducir el tamaño del título */
+    font-weight: bold;
+    margin-bottom: 5px; /* Reducir el espacio inferior */
+}
+
+.card-link {
+    font-size: 10px; /* Reducir el tamaño de la fuente del enlace */
+    color: #0066cc;
+    text-decoration: none;
+    margin-bottom: 0; /* Eliminar margen */
+}
+
+.card-link:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+
+.card-subtitle {
+    color: #666;
+    font-size: 9px; /* Reducir el tamaño del subtítulo */
+    margin-bottom: 5px; /* Reducir espacio entre subtítulo y el resto del contenido */
+}
+
+.card p {
+    font-size: 9px; /* Reducir el tamaño del texto del párrafo */
+    margin-top: 5px; /* Reducir el espacio superior en el párrafo */
+}
+
+.card-title p {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Negrita para resaltar */
+    margin: 0; /* Elimina los márgenes superiores e inferiores */
+    color: #333; /* Color oscuro para resaltar el título */
+}
